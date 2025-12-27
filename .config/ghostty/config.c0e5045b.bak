@@ -1,0 +1,14 @@
+auto-update=off
+font-family = JetBrains Nerd Font Mono
+font-size = 15
+mouse-hide-while-typing = true
+# macos-titlebar-style = native
+window-theme = system
+keybind = cmd+enter=unbind
+# use fish shell for ghostty
+# command = /opt/homebrew/bin/fish --login --interactive
+window-inherit-working-directory=true
+
+# Always get latest features
+# Done initially for search
+auto-update-channel = tip

@@ -1,0 +1,4 @@
+ignore:
+  - migrate.yaml
+  - .DS_Store
+  - '*.log'
