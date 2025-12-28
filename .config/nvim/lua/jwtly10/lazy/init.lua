@@ -17,12 +17,12 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("gitsigns").setup()
-		end,
-	},
+	-- {
+	-- 	"lewis6991/gitsigns.nvim",
+	-- 	config = function()
+	-- 		require("gitsigns").setup()
+	-- 	end,
+	-- },
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()

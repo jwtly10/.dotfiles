@@ -24,7 +24,8 @@ return {
 			},
 			files = {
 				-- Exclude common build/cache directories and files but still show hidden files
-				fd_opts = "--color=never --type f --hidden --no-ignore "
+				-- note: Added --follow in order to follow symlinks due to github.com/jwtly10/go-dotfiles
+				fd_opts = "--follow --color=never --type f --hidden --no-ignore "
 					.. "--exclude .git --exclude node_modules --exclude .venv "
 					.. "--exclude venv --exclude target --exclude dist --exclude build "
 					.. "--exclude .idea --exclude .settings --exclude .project "
@@ -38,7 +39,8 @@ return {
 					.. "--exclude '*DS_Store' --exclude '.ruff_cache' --exclude '.zig-cache' --exclude 'coverage.html'",
 			},
 			grep = {
-				rg_opts = "--color=never --hidden --no-ignore "
+				-- note: Added --follow in order to follow symlinks due to github.com/jwtly10/go-dotfiles
+				rg_opts = "--follow --color=never --hidden --no-ignore "
 					.. "--glob '!.git/' "
 					.. "--glob '!node_modules/' "
 					.. "--glob '!{.venv,venv}/' "
@@ -63,7 +65,8 @@ return {
 
 		vim.keymap.set("n", "<leader>ps", function()
 			fzf.grep_project({
-				rg_opts = "--line-number --color=never --hidden --no-ignore --ignore-case "
+				-- note: Added --follow in order to follow symlinks due to github.com/jwtly10/go-dotfiles
+				rg_opts = "--follow --line-number --color=never --hidden --no-ignore --ignore-case "
 					.. "--glob '!.git/' "
 					.. "--glob '!node_modules/' "
 					.. "--glob '!{.venv,venv}/' "

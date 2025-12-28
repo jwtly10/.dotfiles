@@ -1,16 +1,17 @@
-background=#191919
-auto-update=off
+# Updates
+auto-update = download
+auto-update-channel = tip
+
+# UI
+theme = Builtin Dark
+bold-color=bright
 font-family = JetBrains Nerd Font Mono
-font-size = 20
+font-size = 18
 mouse-hide-while-typing = true
 macos-titlebar-style = native
-window-theme = system
-keybind = cmd+enter=unbind
-# use fish shell for ghostty
-# command = /opt/homebrew/bin/fish --login --interactive
+
 window-inherit-working-directory=true
 
-# Always get latest features
-# Done initially for search
-auto-update-channel = tip
-keybind = shift+enter=text:\x1b\r
+# Fixing keybinding issues - todo: remove:
+# keybind = cmd+enter=unbind
+# keybind = shift+enter=text:\x1b\r
