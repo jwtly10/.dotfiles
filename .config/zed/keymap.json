@@ -1,0 +1,45 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space r n": "editor::Rename",
+      "g t": "editor::Hover",
+      "g r": "editor::FindAllReferences",
+      "K": "editor::Hover",
+      // "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      // "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      // "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      // "ctrl-u": ["workspace::SendKeystrokes", "9 k"],
+      // "ctrl-d": ["workspace::SendKeystrokes", "9 j"],
+      "g c c": "editor::ToggleComments",
+      "space c a": "editor::ToggleCodeActions",
+      "space o": "tab_switcher::Toggle",
+      "space f": "workspace::CloseAllDocks"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual",
+    "bindings": {
+      "g c": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "ContextEditor > Editor",
+    "bindings": {
+      "cmd-shift-g": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-shift-g": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus"
+    }
+  }
+]

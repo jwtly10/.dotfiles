@@ -1,0 +1,64 @@
+{
+  "icon_theme": "Zed (Default)",
+  "load_direnv": "direct",
+  "format_on_save": "on",
+  "preview_tabs": {
+    "enabled": false,
+  },
+  "terminal": {
+    "copy_on_select": true,
+    "shell": {
+      "with_arguments": {
+        "program": "/bin/zsh",
+        "args": [],
+      },
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "check": {
+          "command": "clippy",
+        },
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true,
+          },
+          "closureReturnTypeHints": {
+            "enable": "always",
+          },
+        },
+      },
+    },
+  },
+  "features": {
+    "edit_prediction_provider": "zed",
+  },
+  "agent": {
+    "provider": null,
+  },
+  "theme": "Gruvbox Dark",
+  "indent_guides": {
+    "enabled": false,
+  },
+  "toolbar": {
+    "breadcrumbs": false,
+    "quick_actions": false,
+  },
+  "tab_bar": {
+    "show": true,
+    "show_nav_history_buttons": false,
+  },
+  "vim_mode": true,
+  "ui_font_size": 16.0,
+  "ui_font_family": "Zed Plex Mono",
+  "buffer_font_size": 17.0,
+  "vim": {
+    "use_system_clipboard": "never",
+  },
+  "autosave": "on_window_change",
+  "cursor_blink": false,
+  "relative_line_numbers": "enabled",
+}

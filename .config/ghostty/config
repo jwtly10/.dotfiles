@@ -1,7 +1,7 @@
 background=#191919
 auto-update=off
 font-family = JetBrains Nerd Font Mono
-font-size = 16
+font-size = 20
 mouse-hide-while-typing = true
 macos-titlebar-style = native
 window-theme = system
