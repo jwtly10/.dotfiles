@@ -27,6 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias home="cd ~"
 alias proj="cd ~/Projects"
+alias dotfiles="cd ~/.dotfiles"
 
 alias nvimconfig="cd ~/.config/nvim; nvim ."
 alias vimconfig="cd ~/; vim .vimrc"
