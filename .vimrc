@@ -66,4 +66,4 @@ nnoremap <C-l> <C-w>l
 map j gj
 map k gk
 
-"colorscheme onehalfdark
+colorscheme onehalfdark

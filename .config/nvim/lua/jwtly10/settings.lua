@@ -30,4 +30,4 @@ vim.opt.swapfile = false
 -- Stop auto commenting new lines
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
-vim.cmd("colorscheme vim")
+vim.cmd("colorscheme onehalfdark")

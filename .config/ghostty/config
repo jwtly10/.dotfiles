@@ -1,17 +1,13 @@
-# Updates
-auto-update = download
+# behaviour
 auto-update-channel = tip
+auto-update = download
+window-inherit-working-directory = true
 
-# UI
-theme = Builtin Dark
-bold-color=bright
+# ui
 font-family = JetBrains Nerd Font Mono
-font-size = 18
+font-size = 15
+window-theme = system
 mouse-hide-while-typing = true
-macos-titlebar-style = native
 
-window-inherit-working-directory=true
-
-# Fixing keybinding issues - todo: remove:
-# keybind = cmd+enter=unbind
-# keybind = shift+enter=text:\x1b\r
+# Fixes
+keybind = cmd+enter=unbind
