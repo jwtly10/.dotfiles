@@ -5,6 +5,7 @@ export PATH=$PATH:$HOME/.config/emacs/bin
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/home/personal/bin:$PATH
 export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:$HOME/go/bin
 export M2_HOME='/opt/apache-maven-3.9.6'
 export PATH="$M2_HOME/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
@@ -28,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 alias home="cd ~"
 alias proj="cd ~/Projects"
 alias dotfiles="cd ~/.dotfiles"
+alias dfg="git -C ~/.dotfiles"
 
 alias nvimconfig="cd ~/.config/nvim; nvim ."
 alias vimconfig="cd ~/; vim .vimrc"
