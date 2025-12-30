@@ -1,6 +1,5 @@
 # go-dotfiles manager files
 migrate.yaml
-.dotfiles
 
 # OS files
 .DS_Store
