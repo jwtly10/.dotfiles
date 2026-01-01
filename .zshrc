@@ -10,8 +10,8 @@ export M2_HOME='/opt/apache-maven-3.9.6'
 export PATH="$M2_HOME/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH="/usr/local/bin/python3.12:$PATH"
-export VISUAL=nvim
-export EDITOR=nvim
+export VISUAL=vim
+export EDITOR=vim
 # export SSL_CERT_FILE=$(python3 -m certifi)
 export HNSWLIB_NO_NATIVE=1
 export TERM=xterm-256color
@@ -68,3 +68,10 @@ eval "$(direnv hook zsh)"
 
 # Amp CLI
 export PATH="/Users/personal/.amp/bin:$PATH"
+
+# bun completions
+[ -s "/Users/personal/.bun/_bun" ] && source "/Users/personal/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

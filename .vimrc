@@ -30,9 +30,9 @@ set t_vb=
 set cmdheight=2
 set number
 set notimeout ttimeout ttimeoutlen=200
-set tabstop=8
-set shiftwidth=4
-set softtabstop=4
+set tabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 map Y y$
 set mouse=a
@@ -66,4 +66,4 @@ nnoremap <C-l> <C-w>l
 map j gj
 map k gk
 
-colorscheme onehalfdark
+"colorscheme onehalfdark

@@ -4,10 +4,14 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
+theme = Builtin Dark
 font-family = JetBrains Nerd Font Mono
-font-size = 15
+font-size = 16
 window-theme = system
+macos-titlebar-style=native
 mouse-hide-while-typing = true
 
 # Fixes
 keybind = cmd+enter=unbind
+#100MB
+scrollback-limit=100000000

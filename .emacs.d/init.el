@@ -63,6 +63,9 @@
 (global-set-key (kbd "C-c e") (lambda () (interactive) (find-file user-init-file)))
 (global-set-key (kbd "M-;") 'eval-expression)
 
+;; Turn off the bell sound
+(setq ring-bell-function 'ignore)
+
 
 ; make the title bar native/hidden
 ;(use-package emacs
