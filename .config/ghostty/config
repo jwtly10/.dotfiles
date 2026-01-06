@@ -6,7 +6,7 @@ window-inherit-working-directory = true
 # ui
 theme = Builtin Dark
 font-family = JetBrains Nerd Font Mono
-font-size = 16
+font-size = 17
 window-theme = system
 macos-titlebar-style=native
 mouse-hide-while-typing = true

@@ -39,6 +39,7 @@ alias c="code ."
 
 alias tmuxconfig="~;nvim .tmux.conf"
 alias ghostconfig="~;nvim .config/ghostty/config"
+alias gbind="ghostty +list-keybinds --default"
 alias tmuxsource="tmux source-file ~/.tmux.conf"
 
 alias zshconfig="~; nvim .zshrc"

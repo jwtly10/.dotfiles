@@ -4,3 +4,4 @@ migrate.yaml
 # OS files
 .DS_Store
 *.log
+.tmux/plugins/tpm/
