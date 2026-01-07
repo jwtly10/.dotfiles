@@ -18,17 +18,28 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "no"
--- vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
--- vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "80"
 -- vim.opt.colorcolumn = "120"
 vim.opt.cursorline = false
 vim.opt.swapfile = false
 -- vim.opt.fixendofline = false
 -- vim.opt.endofline = false
 
+-- Addressing some perf issues
+vim.opt.lazyredraw = true
+vim.opt.ttyfast = true
+vim.opt.scrolljump = 5
+
+-- Timeout settings
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 10
+
 -- Stop auto commenting new lines
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
+
+-- Themes
 -- vim.cmd("colorscheme onehalfdark")
-vim.cmd("colorscheme vim")
+-- vim.cmd("colorscheme vim")

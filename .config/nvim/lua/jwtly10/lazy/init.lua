@@ -7,6 +7,19 @@ return {
 	"nvim-tree/nvim-web-devicons",
 	"github/copilot.vim",
 
+	{
+		"sindrets/diffview.nvim",
+		config = function()
+			vim.keymap.set("n", "<leader>gg", function()
+				local view = require("diffview.lib").get_current_view()
+				if view then
+					vim.cmd("DiffviewClose")
+				else
+					vim.cmd("DiffviewOpen")
+				end
+			end, { noremap = true, silent = true, desc = "Toggle Diffview" })
+		end,
+	},
 	"preservim/vimux", -- For vim-test, and spawn test run in tmux pane
 
 	{
@@ -17,12 +30,12 @@ return {
 			vim.fn["mkdp#util#install"]()
 		end,
 	},
-	-- {
-	-- 	"lewis6991/gitsigns.nvim",
-	-- 	config = function()
-	-- 		require("gitsigns").setup()
-	-- 	end,
-	-- },
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("gitsigns").setup()
+		end,
+	},
 	{
 		"windwp/nvim-ts-autotag",
 		config = function()

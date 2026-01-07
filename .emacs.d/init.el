@@ -26,13 +26,15 @@
   :init
   (set-face-attribute 'default nil 
                       :font "JetBrainsMono Nerd Font"
-                      :height 140)  ; 140 = 14pt, adjust as needed
+                      :height 150)  ; 140 = 14pt, adjust as needed
   (set-face-attribute 'fixed-pitch nil 
                       :font "JetBrainsMono Nerd Font"
-                      :height 140)
+                      :height 150)
   (set-face-attribute 'variable-pitch nil 
                       :font "JetBrainsMono Nerd Font"
-                      :height 140))
+                      :height 150))
+(set-frame-font "JetBrainsMono Nerd Font" nil t)
+
 
 ; TODO: May not need this at all
 (push '(menu-bar-lines . 0) default-frame-alist)
@@ -47,7 +49,7 @@
       "straight/repos/straight.el/bootstrap.el"
       (or (bound-and-true-p straight-base-dir)
         user-emacs-directory)))
-    (bootstrap-version 7))
+    (bootstrap-version 7)-)
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
       (url-retrieve-synchronously
@@ -67,13 +69,11 @@
 (setq ring-bell-function 'ignore)
 
 
-; make the title bar native/hidden
-;(use-package emacs
-;  :init
-;  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-;  (add-to-list 'default-frame-alist '(ns-appearance . light))
-;  (setq ns-use-proxy-icon  nil)
-;  (setq frame-title-format nil))
+;; Theming
+(use-package zenburn-theme
+  :straight t
+  :config
+  (load-theme 'zenburn t))
 
 (use-package emacs
   :init
@@ -155,6 +155,7 @@
   (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
   (evil-set-initial-state 'messages-buffer-mode 'normal)
   (evil-set-initial-state 'dashboard-mode 'normal)
+  (fset 'evil-visual-update-x-selection 'ignore)
   ;; fat fingers
   (evil-ex-define-cmd "W" 'evil-write)
   (evil-ex-define-cmd "Wa" 'evil-write-all)
