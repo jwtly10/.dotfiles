@@ -38,6 +38,10 @@ map Y y$
 set mouse=a
 set number
 set termguicolors
+set splitright
+" Stop auto commenting new lines
+autocmd BufEnter * set formatoptions-=cro
+autocmd BufEnter * setlocal formatoptions-=cro
 
 " hi Normal guibg=NONE ctermbg=NONE
 " set background=dark
@@ -57,6 +61,9 @@ nnoremap N Nzzzv
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y "+Y
+
+nnoremap <leader>\ :nohl
+
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

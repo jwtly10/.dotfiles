@@ -4,8 +4,7 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-# theme = Builtin Dark
-theme = Catppuccin Frappe
+background = 191919
 font-family = JetBrains Nerd Font Mono
 font-size = 17
 window-theme = system
