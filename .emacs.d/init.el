@@ -61,6 +61,8 @@
 
 (setq package-enable-at-startup nil)
 
+(global-set-key (kbd "s-w") 'delete-window)
+
 ;; To force access to config even if configuration fails
 (global-set-key (kbd "C-c e") (lambda () (interactive) (find-file user-init-file)))
 (global-set-key (kbd "M-;") 'eval-expression)

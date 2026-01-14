@@ -32,8 +32,8 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"gopls",
-				"golangci_lint_ls",
 				"pyright",
+				"golangci_lint_ls",
 				"clangd",
 			},
 			handlers = {
@@ -70,7 +70,16 @@ return {
 						},
 					})
 				end,
-
+				["golangci_lint_ls"] = function()
+					local lspconfig = require("lspconfig")
+					lspconfig.golangci_lint_ls.setup({
+						cmd = { "golangci-lint-langserver" },
+						filetypes = { "go", "gomod" },
+						init_options = {
+							command = { "golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false" },
+						},
+					})
+				end,
 				["rust_analyzer"] = function()
 					local lspconfig = require("lspconfig")
 					lspconfig.rust_analyzer.setup({
