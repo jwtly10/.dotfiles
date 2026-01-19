@@ -4,11 +4,12 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-# background = 000000
-# background = 191919
 font-family = JetBrains Nerd Font Mono
-font-size = 17
+theme = Catppuccin Frappe
+font-size = 19
+# font-size = 17
 # window-theme = system
+# macos-titlebar-style=native
 macos-titlebar-style=tabs
 mouse-hide-while-typing = true
 

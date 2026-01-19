@@ -3,7 +3,7 @@ vim.wo.wrap = true
 vim.wo.linebreak = true
 vim.g.updatetime = 100
 vim.opt.nu = true
--- vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
@@ -43,5 +43,3 @@ vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- Themes
 vim.cmd("colorscheme onehalfdark")
--- vim.cmd("colorscheme vim")
--- vim.cmd("colorscheme default")

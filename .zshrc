@@ -17,7 +17,7 @@ export HNSWLIB_NO_NATIVE=1
 export TERM=xterm-256color
 export ZSH="$HOME/.oh-my-zsh"
 
-# alias vim="nvim"
+alias vim="nvim"
 alias nvim="nvim"
 setopt IGNORE_EOF
 
@@ -57,7 +57,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Angular stuff
-source <(ng completion script)
+# source <(ng completion script)
 
 autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

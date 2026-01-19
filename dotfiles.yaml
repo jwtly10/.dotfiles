@@ -2,3 +2,4 @@ ignore:
   - migrate.yaml
   - .DS_Store
   - '*.log'
+  - pkg.md
