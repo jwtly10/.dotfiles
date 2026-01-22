@@ -26,13 +26,13 @@
   :init
   (set-face-attribute 'default nil 
                       :font "JetBrainsMono Nerd Font"
-                      :height 150)  ; 140 = 14pt, adjust as needed
+                      :height 140)  ; 140 = 14pt, adjust as needed
   (set-face-attribute 'fixed-pitch nil 
                       :font "JetBrainsMono Nerd Font"
-                      :height 150)
+                      :height 140)
   (set-face-attribute 'variable-pitch nil 
                       :font "JetBrainsMono Nerd Font"
-                      :height 150))
+                      :height 140))
 (set-frame-font "JetBrainsMono Nerd Font" nil t)
 
 
@@ -467,6 +467,12 @@
          (go-ts-mode . eglot-ensure)
          (typescript-ts-mode . eglot-ensure)
          (tsx-ts-mode . eglot-ensure))
+  :custom
+  (eglot-ignored-server-capabilities '(:inlayHintProvider))
+  ;; todo: remove this was just testing an issue with a project
+  ;; :config
+  ;; (add-to-list 'eglot-server-programs
+  ;;              '(tsx-ts-mode . ("typescript-language-server" "--stdio")))
   :general
   (:keymaps 'eglot-mode-map
    :states 'normal
@@ -523,21 +529,21 @@
   :demand
   :custom
   (persp-suppress-no-prefix-key-warning t)
+  (persp-initial-frame-name "1")
   :general
   (leader-keys
     "TAB" '(:ignore t :which-key "workspace")
     "TAB TAB" '(persp-switch :which-key "switch workspace")
-    "TAB n" '(persp-next :which-key "next workspace")
-    "TAB p" '(persp-prev :which-key "previous workspace")
-    "TAB d" '(persp-kill :which-key "delete workspace")
+    "TAB ]" '(persp-next :which-key "next workspace")
+    "TAB [" '(persp-prev :which-key "previous workspace")
+    "TAB d" '(persp-kill-current :which-key "delete workspace")
     "TAB r" '(persp-rename :which-key "rename workspace")
-    "TAB c" '(persp-switch :which-key "create/switch workspace")
+    "TAB n" '(my/persp-new-numbered :which-key "new workspace")
     "TAB s" '(persp-state-save :which-key "save workspaces")
     "TAB l" '(persp-state-load :which-key "load workspaces")
     "TAB b" '(persp-switch-to-buffer :which-key "switch to buffer in workspace")
     "TAB k" '(persp-remove-buffer :which-key "remove buffer from workspace")
     "TAB a" '(persp-add-buffer :which-key "add buffer to workspace"))
-  ;; Bind S-1 through S-9 to switch workspaces
   :bind (("s-1" . (lambda () (interactive) (persp-switch-by-number 1)))
          ("s-2" . (lambda () (interactive) (persp-switch-by-number 2)))
          ("s-3" . (lambda () (interactive) (persp-switch-by-number 3)))
@@ -546,13 +552,73 @@
          ("s-6" . (lambda () (interactive) (persp-switch-by-number 6)))
          ("s-7" . (lambda () (interactive) (persp-switch-by-number 7)))
          ("s-8" . (lambda () (interactive) (persp-switch-by-number 8)))
-         ("s-9" . (lambda () (interactive) (persp-switch-by-number 9))))
+         ("s-9" . (lambda () (interactive) (persp-switch-by-number 9)))
+         ("s-t" . my/persp-new-numbered))
   :init
   (persp-mode)
   :config
-  ;; Auto-save workspaces
   (setq persp-state-default-file (expand-file-name ".persp-state" user-emacs-directory))
-  (add-hook 'kill-emacs-hook #'persp-state-save))
+  (add-hook 'kill-emacs-hook #'persp-state-save)
+
+  ;; Auto-save on workspace changes
+  (add-hook 'persp-switch-hook #'persp-state-save)
+  (add-hook 'persp-renamed-hook #'persp-state-save)
+  (add-hook 'persp-before-kill-functions #'persp-state-save)
+  
+  ;; Save on exit
+  (add-hook 'kill-emacs-hook #'persp-state-save)
+  
+  ;; Auto-load on startup (with lambda wrapper)
+  (add-hook 'emacs-startup-hook (lambda () (persp-state-load persp-state-default-file)))
+  
+  (defvar my/persp-counter 1 "Counter for auto-numbering workspaces")
+
+  (defun persp-kill-current ()
+    "Kill the current perspective without prompting"
+    (interactive)
+    (persp-kill (persp-current-name)))
+  
+  (defun my/persp-new-numbered ()
+    "Create a new workspace with auto-incremented number"
+    (interactive)
+    (persp-switch (number-to-string my/persp-counter))
+    (setq my/persp-counter (1+ my/persp-counter))))
+
+;; (use-package perspective
+;;   :straight t
+;;   :demand
+;;   :custom
+;;   (persp-suppress-no-prefix-key-warning t)
+;;   :general
+;;   (leader-keys
+;;     "TAB" '(:ignore t :which-key "workspace")
+;;     "TAB TAB" '(persp-switch :which-key "switch workspace")
+;;     "TAB n" '(persp-next :which-key "next workspace")
+;;     "TAB p" '(persp-prev :which-key "previous workspace")
+;;     "TAB d" '(persp-kill :which-key "delete workspace")
+;;     "TAB r" '(persp-rename :which-key "rename workspace")
+;;     "TAB c" '(persp-switch :which-key "create/switch workspace")
+;;     "TAB s" '(persp-state-save :which-key "save workspaces")
+;;     "TAB l" '(persp-state-load :which-key "load workspaces")
+;;     "TAB b" '(persp-switch-to-buffer :which-key "switch to buffer in workspace")
+;;     "TAB k" '(persp-remove-buffer :which-key "remove buffer from workspace")
+;;     "TAB a" '(persp-add-buffer :which-key "add buffer to workspace"))
+;;   ;; Bind S-1 through S-9 to switch workspaces
+;;   :bind (("s-1" . (lambda () (interactive) (persp-switch-by-number 1)))
+;;          ("s-2" . (lambda () (interactive) (persp-switch-by-number 2)))
+;;          ("s-3" . (lambda () (interactive) (persp-switch-by-number 3)))
+;;          ("s-4" . (lambda () (interactive) (persp-switch-by-number 4)))
+;;          ("s-5" . (lambda () (interactive) (persp-switch-by-number 5)))
+;;          ("s-6" . (lambda () (interactive) (persp-switch-by-number 6)))
+;;          ("s-7" . (lambda () (interactive) (persp-switch-by-number 7)))
+;;          ("s-8" . (lambda () (interactive) (persp-switch-by-number 8)))
+;;          ("s-9" . (lambda () (interactive) (persp-switch-by-number 9))))
+;;   :init
+;;   (persp-mode)
+;;   :config
+;;   ;; Auto-save workspaces
+;;   (setq persp-state-default-file (expand-file-name ".persp-state" user-emacs-directory))
+;;   (add-hook 'kill-emacs-hook #'persp-state-save))
 
 (use-package project
   :config

@@ -1,11 +1,11 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	tag = "v0.2.0",
+	tag = "v0.2.1",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope-live-grep-args.nvim",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
-
 	config = function()
 		require("telescope").load_extension("live_grep_args")
 		require("telescope").setup({
@@ -34,7 +34,7 @@ return {
 					follow = true,
 				},
 				colorscheme = {
-					enable_preview = false,
+					enable_preview = true,
 				},
 				current_buffer_fuzzy_find = {
 					enable_preview = false,

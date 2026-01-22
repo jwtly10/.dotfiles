@@ -1,5 +1,5 @@
 -- vim.opt.guicursor = ""
-vim.wo.wrap = true
+-- vim.wo.wrap = true
 vim.wo.linebreak = true
 vim.g.updatetime = 100
 vim.opt.nu = true
@@ -8,7 +8,7 @@ vim.opt.relativenumber = true
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.tabstop = 4
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 -- vim.opt.expandtab = true
@@ -42,4 +42,5 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- Themes
-vim.cmd("colorscheme onehalfdark")
+vim.cmd("colorscheme vim")
+-- vim.cmd("colorscheme onehalfdark")

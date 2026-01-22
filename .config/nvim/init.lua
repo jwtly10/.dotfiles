@@ -5,6 +5,9 @@ vim.g.loaded_netrwPlugin = 1
 -- Comment above, uncomment below to use Netrw
 -- vim.keymap.set("n", "<leader>pn", ":Ex<CR>", { noremap = true, silent = true })
 
+-- Annoying deprecations - I won't update
+vim.deprecate = function() end
+
 if vim.v.argv[3] and vim.fn.isdirectory(vim.v.argv[3]) == 1 then
 	vim.api.nvim_set_current_dir(vim.v.argv[3])
 end
