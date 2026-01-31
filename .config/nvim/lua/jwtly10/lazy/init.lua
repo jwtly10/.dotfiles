@@ -6,6 +6,12 @@ return {
 	"tpope/vim-fugitive",
 	"nvim-tree/nvim-web-devicons",
 	"github/copilot.vim",
+	{
+		"folke/ts-comments.nvim",
+		opts = {},
+		event = "VeryLazy",
+		enabled = vim.fn.has("nvim-0.10.0") == 1,
+	},
 
 	{
 		"sindrets/diffview.nvim",

@@ -17,7 +17,7 @@
 
 ;; THEMES
 ;; (setq doom-theme 'doom-zenburn)
-(setq doom-theme 'modus-vivendi)
+(setq doom-theme 'doom-zenburn)
 
 ;; Hide toolbar
 (add-hook 'doom-after-init-hook (lambda () (tool-bar-mode 1) (tool-bar-mode 0)))
@@ -99,6 +99,10 @@
 ;; (setq lsp-log-io t)
 ;; (setq lsp-print-performance t)
 
+;; Inlay hints are annoying
+(after! lsp-mode
+  (setq lsp-inlay-hint-enable nil))
+
 ;; support for mql
 (add-to-list 'auto-mode-alist '("\\.mq[45h]?\\'" . c++-mode))
 
@@ -149,13 +153,13 @@
   (setq web-mode-enable-auto-pairing t))
 
 ;; Copilot
-;;(use-package! copilot
-;;:hook (prog-mode . copilot-mode)
-;;:bind (:map copilot-completion-map
-;;("<tab>" . 'copilot-accept-completion)
-;;("TAB" . 'copilot-accept-completion)
-;;("C-TAB" . 'copilot-accept-completion-by-word)
-;;("C-<tab>" . 'copilot-accept-completion-by-word)))
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
 ;; Rust
 (after! lsp-rust
@@ -188,3 +192,19 @@
 (map! :leader
       :desc "New Claude chat"
       "o c" #'open-claude-chat)
+
+;; ***************
+;; Claude Code
+;; ***************
+(use-package! claude-code
+  :config
+  (setq claude-code-terminal-backend 'vterm)
+
+  (when (featurep 'monet)
+    (add-hook 'claude-code-process-environment-functions #'monet-start-server-function)
+    (monet-mode 1))
+
+  (claude-code-mode)
+
+  :bind-keymap
+  ("C-c c" . claude-code-command-map))

@@ -58,6 +58,15 @@ return {
 			},
 		})
 
+		lspconfig.rust_analyzer.setup({
+			capabilities = capabilities,
+			settings = {
+				["rust-analyzer"] = {
+					PATH = "append",
+				},
+			},
+		})
+
 		lspconfig.ts_ls.setup({
 			capabilities = capabilities,
 		})

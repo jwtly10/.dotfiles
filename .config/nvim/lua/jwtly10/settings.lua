@@ -16,7 +16,7 @@ vim.opt.shiftwidth = 4
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
 vim.opt.termguicolors = false
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "no"
 vim.opt.signcolumn = "yes"
@@ -42,5 +42,5 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- Themes
-vim.cmd("colorscheme vim")
+-- vim.cmd("colorscheme vim")
 -- vim.cmd("colorscheme onehalfdark")

@@ -4,10 +4,13 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-# background = #000000
-theme =Solarized Dark Higher Contrast
+background = #191919
+# theme =Solarized Dark Higher Contrast
+# theme = Catppuccin Macchiato
+# theme = Nord
 font-family = JetBrains Nerd Font Mono
-font-size = 17
+# font-size = 23
+font-size = 18
 # window-theme = system
 macos-titlebar-style=native
 # macos-titlebar-style=tabs

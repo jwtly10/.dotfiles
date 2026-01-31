@@ -55,3 +55,12 @@
 
 (package! copilot
   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")))
+
+
+
+;; claude code integration
+(package! inheritenv)
+(package! claude-code
+  :recipe (:host github :repo "stevemolitor/claude-code.el"))
+(package! monet
+  :recipe (:host github :repo "stevemolitor/monet"))

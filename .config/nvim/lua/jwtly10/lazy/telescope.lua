@@ -12,13 +12,16 @@ return {
 			defaults = {
 				border = true,
 				sorting_strategy = "ascending",
+				cache_picker = {
+					num_pickers = 10,
+				},
 				mappings = {
 					i = {
 						["<C-\\>"] = require("telescope.actions.layout").toggle_preview,
 					},
 				},
 				preview = {
-					hide_on_startup = true,
+					hide_on_startup = false,
 				},
 			},
 			pickers = {
@@ -76,6 +79,10 @@ return {
 				search = vim.fn.expand("<cword>"),
 			})
 		end)
+
+		vim.keymap.set("n", "<leader>pl", function()
+			require("telescope.builtin").resume()
+		end, { desc = "Resume last telescope picker" })
 
 		vim.keymap.set("n", "<leader>o", function()
 			builtin.buffers({
