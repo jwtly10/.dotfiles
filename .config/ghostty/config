@@ -4,10 +4,6 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-background = #191919
-# theme =Solarized Dark Higher Contrast
-# theme = Catppuccin Macchiato
-# theme = Nord
 font-family = JetBrains Nerd Font Mono
 # font-size = 23
 font-size = 18
