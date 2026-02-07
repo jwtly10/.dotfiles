@@ -1,15 +1,10 @@
-# behaviour
 auto-update-channel = tip
 auto-update = download
 window-inherit-working-directory = true
 
 # ui
-font-family = JetBrains Nerd Font Mono
-# font-size = 23
-font-size = 18
-# window-theme = system
+font-size = 15
 macos-titlebar-style=native
-# macos-titlebar-style=tabs
 mouse-hide-while-typing = true
 
 keybind = cmd+enter=unbind

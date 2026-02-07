@@ -26,12 +26,6 @@
     },
   },
   {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-shift-g": "git_panel::ToggleFocus",
-    },
-  },
-  {
     "context": "SettingsWindow",
     "bindings": {
       "cmd-1": ["settings_editor::FocusFile", 0],
@@ -41,6 +35,36 @@
     "context": "Welcome",
     "bindings": {
       "cmd-1": null
+    }
+  },
+  {
+    "context": "ContextEditor > Editor",
+    "bindings": {
+      "cmd-shift-g": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-shift-g": null
+    }
+  },
+  {
+    "context": "!(ContextEditor) > (Editor && mode == full)",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus"
     }
   }
 ]

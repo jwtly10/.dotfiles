@@ -31,6 +31,7 @@ return {
 				"gopls",
 				"golangci_lint_ls",
 				"ts_ls",
+				"zls",
 			},
 		})
 
@@ -68,6 +69,10 @@ return {
 		})
 
 		lspconfig.ts_ls.setup({
+			capabilities = capabilities,
+		})
+
+		lspconfig.zls.setup({
 			capabilities = capabilities,
 		})
 
