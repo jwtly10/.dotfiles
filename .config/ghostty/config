@@ -3,10 +3,11 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-font-size = 15
+font-size = 19
 macos-titlebar-style=native
 mouse-hide-while-typing = true
 
 keybind = cmd+enter=unbind
-#100MB
+
+#Increase to 100MB
 scrollback-limit=100000000

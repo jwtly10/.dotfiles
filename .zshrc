@@ -80,3 +80,25 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/Users/personal/.opencode/bin:$PATH
+
+# Quick build ladybird
+autoload -U add-zsh-hook
+ladybird_aliases() {
+  if [[ "$PWD" == */ladybird* ]]; then
+    ninja() {
+      if [[ $# -eq 0 ]]; then
+        command ninja -C Build/debug
+      else
+        command ninja "$@"
+      fi
+    }
+    alias run='BUILD_PRESET=Debug ./Meta/ladybird.py run'
+    alias lb='./Build/debug/bin/Ladybird.app/Contents/MacOS/Ladybird'
+  else
+    unfunction ninja 2>/dev/null
+    unalias run 2>/dev/null
+    unalias lb 2>/dev/null
+  fi
+}
+add-zsh-hook chpwd ladybird_aliases
+ladybird_aliases  # Run once on shell start

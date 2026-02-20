@@ -7,6 +7,7 @@
       "g r": "editor::FindAllReferences",
       "g i": "editor::GoToImplementation",
       "K": "editor::Hover",
+      "space x x": "diagnostics::Deploy",
       // "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
       // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
       // "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
@@ -34,37 +35,91 @@
   {
     "context": "Welcome",
     "bindings": {
-      "cmd-1": null
-    }
+      "cmd-1": null,
+    },
   },
   {
     "context": "ContextEditor > Editor",
     "bindings": {
-      "cmd-shift-g": null
-    }
+      "cmd-shift-g": null,
+    },
   },
   {
     "context": "Pane",
     "bindings": {
-      "cmd-shift-g": null
-    }
+      "cmd-shift-g": null,
+    },
   },
   {
     "context": "!(ContextEditor) > (Editor && mode == full)",
     "bindings": {
-      "cmd-shift-g": "git_panel::ToggleFocus"
-    }
+      "cmd-shift-g": "git_panel::ToggleFocus",
+    },
   },
   {
     "context": "AgentPanel",
     "bindings": {
-      "cmd-shift-g": "git_panel::ToggleFocus"
+      "cmd-shift-g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-shift-g": "git_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-[": "pane::ActivatePreviousItem",
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-]": "pane::ActivateNextItem",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "cmd-t": "workspace::NewTerminal",
+    },
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-2": null
     }
   },
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-shift-g": "git_panel::ToggleFocus"
+      "cmd-3": null
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-4": null
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-1": [
+        "pane::ActivateItem",
+        0
+      ]
+    }
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-2": [
+        "pane::ActivateItem",
+        1
+      ]
     }
   }
 ]

@@ -5,7 +5,13 @@ return {
 	},
 	"tpope/vim-fugitive",
 	"nvim-tree/nvim-web-devicons",
-	"github/copilot.vim",
+	-- "github/copilot.vim",
+	{
+		"petertriho/nvim-scrollbar",
+		config = function()
+			require("scrollbar").setup()
+		end,
+	},
 	{
 		"folke/ts-comments.nvim",
 		opts = {},
@@ -40,6 +46,7 @@ return {
 		"lewis6991/gitsigns.nvim",
 		config = function()
 			require("gitsigns").setup()
+			require("scrollbar.handlers.gitsigns").setup()
 		end,
 	},
 	{

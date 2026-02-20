@@ -74,3 +74,4 @@ map j gj
 map k gk
 
 "colorscheme onehalfdark
+colorscheme onehalfdark

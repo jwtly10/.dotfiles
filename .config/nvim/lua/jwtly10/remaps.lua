@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 -- Opening in a new tab
-vim.keymap.set("n", "<leader>gs", ":tab G<CR>")
--- vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+-- vim.keymap.set("n", "<leader>gs", ":tab G<CR>")
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
 vim.keymap.set("n", "<C-CR>", ":o<CR>")
 
 vim.api.nvim_create_user_command("Qa", "qa", {})

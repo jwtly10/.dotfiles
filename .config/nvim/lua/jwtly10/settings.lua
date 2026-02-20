@@ -3,7 +3,7 @@
 vim.wo.linebreak = true
 vim.g.updatetime = 100
 vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 -- Case insensitive searching UNLESS /C or capital in search
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
@@ -11,7 +11,7 @@ vim.opt.tabstop = 4
 vim.opt.wrap = false
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
--- vim.opt.expandtab = true
+-- vim.opt.expandtab = tru
 -- vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
