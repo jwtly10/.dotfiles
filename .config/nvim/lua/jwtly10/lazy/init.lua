@@ -5,7 +5,7 @@ return {
 	},
 	"tpope/vim-fugitive",
 	"nvim-tree/nvim-web-devicons",
-	-- "github/copilot.vim",
+	"github/copilot.vim",
 	{
 		"petertriho/nvim-scrollbar",
 		config = function()
