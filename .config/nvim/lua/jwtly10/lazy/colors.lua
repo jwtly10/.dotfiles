@@ -1,9 +1,10 @@
 return {
-	{
-		"sainnhe/sonokai",
-		config = function()
-			vim.g.sonokai_enable_italic = false
-			-- vim.cmd("colorscheme sonokai")
-		end,
-	},
+	"nickkadutskyi/jb.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {},
+	config = function()
+		require("jb").setup({ transparent = true })
+		-- vim.cmd("colorscheme jb")
+	end,
 }

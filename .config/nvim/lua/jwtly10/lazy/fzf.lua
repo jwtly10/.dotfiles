@@ -63,38 +63,38 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>ps", function()
-			fzf.grep_project({
-				-- note: Added --follow in order to follow symlinks due to github.com/jwtly10/go-dotfiles
-				rg_opts = "--follow --line-number --color=never --hidden --no-ignore --ignore-case "
-					.. "--glob '!.git/' "
-					.. "--glob '!node_modules/' "
-					.. "--glob '!{.venv,venv}/' "
-					.. "--glob '!{target,dist,build}/' "
-					.. "--glob '!.idea/' "
-					.. "--glob '!.settings/' "
-					.. "--glob '!{.project,.classpath}' "
-					.. "--glob '!**/__pycache__/' "
-					.. "--glob '!*.{pyc,pyo,class,jar,war}' "
-					.. "--glob '!.{gradle,maven,npm}/' "
-					.. "--glob '!.{next,nuxt}/' "
-					.. "--glob '!coverage/' "
-					.. "--glob '!.coverage' "
-					.. "--glob '!.{pytest,mypy}_cache/' "
-					.. "--glob '!*.egg-info/' "
-					.. "--glob '!.DS_Store' "
-					.. "--glob '!.zig-cache' "
-					.. "--glob '!site/' "
-					.. "--glob '!coverage.html'",
-			})
-		end)
+		-- vim.keymap.set("n", "<leader>ps", function()
+		-- 	fzf.grep_project({
+		-- 		-- note: Added --follow in order to follow symlinks due to github.com/jwtly10/go-dotfiles
+		-- 		rg_opts = "--follow --line-number --color=never --hidden --no-ignore --ignore-case "
+		-- 			.. "--glob '!.git/' "
+		-- 			.. "--glob '!node_modules/' "
+		-- 			.. "--glob '!{.venv,venv}/' "
+		-- 			.. "--glob '!{target,dist,build}/' "
+		-- 			.. "--glob '!.idea/' "
+		-- 			.. "--glob '!.settings/' "
+		-- 			.. "--glob '!{.project,.classpath}' "
+		-- 			.. "--glob '!**/__pycache__/' "
+		-- 			.. "--glob '!*.{pyc,pyo,class,jar,war}' "
+		-- 			.. "--glob '!.{gradle,maven,npm}/' "
+		-- 			.. "--glob '!.{next,nuxt}/' "
+		-- 			.. "--glob '!coverage/' "
+		-- 			.. "--glob '!.coverage' "
+		-- 			.. "--glob '!.{pytest,mypy}_cache/' "
+		-- 			.. "--glob '!*.egg-info/' "
+		-- 			.. "--glob '!.DS_Store' "
+		-- 			.. "--glob '!.zig-cache' "
+		-- 			.. "--glob '!site/' "
+		-- 			.. "--glob '!coverage.html'",
+		-- 	})
+		-- end)
 
-		vim.keymap.set("n", "<leader>pf", function()
-			fzf.git_files()
-		end)
-		vim.keymap.set("n", "<leader>pg", function()
-			fzf.files()
-		end)
+		-- vim.keymap.set("n", "<leader>pf", function()
+		-- 	fzf.git_files()
+		-- end)
+		-- vim.keymap.set("n", "<leader>pg", function()
+		-- 	fzf.files()
+		-- end)
 
 		vim.keymap.set("n", "<leader>pm", function()
 			fzf.marks()
