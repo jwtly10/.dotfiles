@@ -3,7 +3,7 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-font-size = 19
+font-size = 18
 # background = #282A2C # very very dark blue
 background = #191919
 macos-titlebar-style=native

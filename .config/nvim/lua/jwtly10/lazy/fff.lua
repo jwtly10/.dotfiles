@@ -1,7 +1,6 @@
 return {
 	"dmtrKovalenko/fff.nvim",
 	build = function()
-		-- will download prebuild binary or try to use existing rustup toolchain to build from source
 		require("fff.download").download_or_build_binary()
 	end,
 	lazy = false,

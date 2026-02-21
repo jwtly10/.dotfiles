@@ -21,3 +21,5 @@ brew install ripgrep
 brew install tmux
 brew install tree
 brew install prettier
+brew install luarocks
+brew install tree-sitter-cli

@@ -1,5 +1,3 @@
--- vim.opt.guicursor = ""
--- vim.wo.wrap = true
 vim.wo.linebreak = true
 vim.g.updatetime = 100
 vim.opt.nu = true
@@ -41,8 +39,6 @@ vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
 
 -- Themes
--- vim.cmd("colorscheme sitruuna")
+-- Vim compat theme - ./colors/onehalfdark.vim
 -- vim.cmd("colorscheme onehalfdark")
 vim.o.background = "dark"
-vim.g.hybrid_custom_term_colors = 1
-vim.cmd("colorscheme hybrid")

@@ -4,11 +4,9 @@ require("jwtly10.remaps")
 require("jwtly10.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
-
 local autocmd = vim.api.nvim_create_autocmd
-local JGroup = augroup("jwtly10", {})
-local yank_group = augroup("HighlightYank", {})
 
+local yank_group = augroup("HighlightYank", {})
 autocmd("TextYankPost", {
 	group = yank_group,
 	pattern = "*",
@@ -19,9 +17,8 @@ autocmd("TextYankPost", {
 		})
 	end,
 })
--- local autocmd = vim.api.nvim_create_autocmd
--- local augroup = vim.api.nvim_create_augroup
--- local JGroup = augroup("jwtly10.lsp", {})
+
+local JGroup = augroup("jwtly10", {})
 autocmd("LspAttach", {
 	group = JGroup,
 	callback = function(e)
@@ -58,19 +55,20 @@ autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", function()
 			fzf.lsp_definitions({ jump_to_single_result = true })
 		end, opts)
-		-- Similar to intellij - check for impls if not found, else fall back to defs
-		vim.keymap.set("n", "gi", function()
-			-- Try implementations first
-			vim.lsp.buf.implementation()
 
-			-- Check after a brief delay if no results, fall back to definitions
-			vim.defer_fn(function()
-				local qf_list = vim.fn.getqflist()
-				if #qf_list == 0 then
-					fzf.lsp_definitions({ jump_to_single_result = true })
-				end
-			end, 100)
-		end, opts)
+		-- -- Similar to intellij - check for impls if not found, else fall back to defs
+		-- vim.keymap.set("n", "gi", function()
+		-- 	-- Try implementations first
+		-- 	vim.lsp.buf.implementation()
+		--
+		-- 	-- Check after a brief delay if no results, fall back to definitions
+		-- 	vim.defer_fn(function()
+		-- 		local qf_list = vim.fn.getqflist()
+		-- 		if #qf_list == 0 then
+		-- 			fzf.lsp_definitions({ jump_to_single_result = true })
+		-- 		end
+		-- 	end, 100)
+		-- end, opts)
 		vim.keymap.set("n", "gi", function()
 			fzf.lsp_implementations({ jump_to_single_result = true })
 		end, opts)
@@ -87,9 +85,9 @@ autocmd("LspAttach", {
 			end)
 		end, opts)
 
-		vim.keymap.set("n", "gi", function()
-			fzf.lsp_implementations({ jump_to_single_result = true })
-		end, opts)
+		-- vim.keymap.set("n", "gi", function()
+		-- 	fzf.lsp_implementations({ jump_to_single_result = true })
+		-- end, opts)
 		vim.keymap.set("n", "gr", function()
 			fzf.lsp_references()
 		end, opts)

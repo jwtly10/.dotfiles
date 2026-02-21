@@ -1,10 +1,14 @@
 return {
-	"nickkadutskyi/jb.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-	config = function()
-		require("jb").setup({ transparent = true })
-		-- vim.cmd("colorscheme jb")
-	end,
+	{
+		"blazkowolf/gruber-darker.nvim",
+		config = function()
+			require("gruber-darker").setup({
+				bold = false,
+				italic = {
+					strings = false,
+				},
+			})
+			vim.cmd.colorscheme("gruber-darker")
+		end,
+	},
 }

@@ -15,7 +15,6 @@ return {
 	config = function()
 		local cmp = require("cmp")
 		local cmp_lsp = require("cmp_nvim_lsp")
-		local lspconfig = require("lspconfig")
 
 		local capabilities = vim.tbl_deep_extend(
 			"force",
@@ -33,10 +32,11 @@ return {
 				"ts_ls",
 				"zls",
 				"clangd",
+				"rust_analyzer",
 			},
 		})
 
-		lspconfig.lua_ls.setup({
+		vim.lsp.config["lua_ls"] = {
 			capabilities = capabilities,
 			settings = {
 				Lua = {
@@ -45,22 +45,20 @@ return {
 					},
 				},
 			},
-		})
+		}
 
-		lspconfig.gopls.setup({
+		vim.lsp.config["gopls"] = {
 			capabilities = capabilities,
-			filetypes = { "go", "gomod", "gowork", "gotmpl" },
-		})
-
-		lspconfig.golangci_lint_ls.setup({
+			filetypes = { "go", "gomod" },
+		}
+		vim.lsp.config["golangci_lint_ls"] = {
 			capabilities = capabilities,
 			filetypes = { "go", "gomod" },
 			init_options = {
 				command = { "golangci-lint", "run", "--output.json.path=stdout", "--show-stats=false" },
 			},
-		})
-
-		lspconfig.rust_analyzer.setup({
+		}
+		vim.lsp.config["rust_analyzer"] = {
 			capabilities = capabilities,
 			settings = {
 				["rust-analyzer"] = {
@@ -70,24 +68,23 @@ return {
 					PATH = "append",
 				},
 			},
-		})
-
-		lspconfig.ts_ls.setup({
+		}
+		vim.lsp.config["ts_ls"] = {
 			capabilities = capabilities,
-		})
-
-		lspconfig.zls.setup({
+		}
+		vim.lsp.config["zls"] = {
 			capabilities = capabilities,
-		})
-
-		lspconfig.html.setup({
+		}
+		vim.lsp.config["html"] = {
 			capabilities = capabilities,
-		})
-
-		lspconfig.clangd.setup({
+		}
+		vim.lsp.config["ts_ls"] = {
+			capabilities = capabilities,
+		}
+		vim.lsp.config["clangd"] = {
 			capabilities = capabilities,
 			cmd = { "/opt/homebrew/opt/llvm@18/bin/clangd" },
-		})
+		}
 
 		cmp.setup({
 			completion = {
