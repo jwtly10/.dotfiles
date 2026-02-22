@@ -23,3 +23,4 @@ brew install tree
 brew install prettier
 brew install luarocks
 brew install tree-sitter-cli
+brew install clang-format

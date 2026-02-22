@@ -3,6 +3,12 @@ return {
 		"nvim-lua/plenary.nvim",
 		name = "plenary",
 	},
+	{
+		"nmac427/guess-indent.nvim",
+		config = function()
+			require("guess-indent").setup({})
+		end,
+	},
 	"tpope/vim-fugitive",
 	"nvim-tree/nvim-web-devicons",
 	"github/copilot.vim",

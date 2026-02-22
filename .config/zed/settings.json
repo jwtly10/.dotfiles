@@ -29,6 +29,7 @@
     "enabled": true,
   },
   "terminal": {
+    "font_size": 12.0,
     "copy_on_select": true,
     "shell": {
       "with_arguments": {

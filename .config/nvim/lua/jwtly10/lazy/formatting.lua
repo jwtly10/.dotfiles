@@ -35,6 +35,7 @@ return {
 				jsonc = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
+				c = { "clang-format" },
 				["markdown.mdx"] = { "prettier" },
 			},
 			format_on_save = function(bufnr)
