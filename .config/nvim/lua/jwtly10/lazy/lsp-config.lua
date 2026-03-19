@@ -33,6 +33,8 @@ return {
 				"zls",
 				"clangd",
 				"rust_analyzer",
+				"pyright",
+				"ruff", -- python formatter
 			},
 		})
 
@@ -70,6 +72,9 @@ return {
 			},
 		}
 		vim.lsp.config["ts_ls"] = {
+			capabilities = capabilities,
+		}
+		vim.lsp.config["tls"] = {
 			capabilities = capabilities,
 		}
 		vim.lsp.config["zls"] = {

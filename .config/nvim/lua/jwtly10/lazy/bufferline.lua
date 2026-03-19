@@ -1,19 +1,20 @@
-return {
-	"akinsho/bufferline.nvim",
-	version = "*",
-	dependencies = "nvim-tree/nvim-web-devicons",
-	config = function()
-		local bufferline = require("bufferline")
-		bufferline.setup({
-			options = {
-				style_preset = bufferline.style_preset.minimal,
-				diagnostics = "nvim_lsp",
-				show_buffer_icons = false,
-			},
-		})
-
-		-- add commands so ctrl [ and ctrl ] can be used to navigate buffers
-		vim.api.nvim_set_keymap("n", "<C-[>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
-		vim.api.nvim_set_keymap("n", "<C-]>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
-	end,
-}
+return {}
+-- return {
+-- 	"akinsho/bufferline.nvim",
+-- 	version = "*",
+-- 	dependencies = "nvim-tree/nvim-web-devicons",
+-- 	config = function()
+-- 		local bufferline = require("bufferline")
+-- 		bufferline.setup({
+-- 			options = {
+-- 				style_preset = bufferline.style_preset.minimal,
+-- 				diagnostics = "nvim_lsp",
+-- 				show_buffer_icons = false,
+-- 			},
+-- 		})
+--
+-- 		-- add commands so ctrl [ and ctrl ] can be used to navigate buffers
+-- 		vim.api.nvim_set_keymap("n", "<C-[>", ":BufferLineCyclePrev<CR>", { noremap = true, silent = true })
+-- 		vim.api.nvim_set_keymap("n", "<C-]>", ":BufferLineCycleNext<CR>", { noremap = true, silent = true })
+-- 	end,
+-- }

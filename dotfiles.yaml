@@ -3,3 +3,4 @@ ignore:
   - .DS_Store
   - '*.log'
   - pkg.md
+  - '**/karabiner/automatic_backups/**'

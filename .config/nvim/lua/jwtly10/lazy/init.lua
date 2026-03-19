@@ -3,6 +3,10 @@ return {
 		"nvim-lua/plenary.nvim",
 		name = "plenary",
 	},
+	-- {
+	-- 	"f-person/git-blame.nvim",
+	-- 	event = "VeryLazy",
+	-- },
 	{
 		"nmac427/guess-indent.nvim",
 		config = function()

@@ -24,6 +24,7 @@ return {
 				rust = { "rustfmt", lsp_format = "fallback" },
 				go = { "gofmt", "goimports", lsp_format = "fallback" },
 				javascript = { "prettier" },
+				python = { lsp_format = "fallback" },
 				javascriptreact = { "prettier" },
 				typescript = { "prettier" },
 				typescriptreact = { "prettier" },
@@ -36,6 +37,7 @@ return {
 				yaml = { "prettier" },
 				markdown = { "prettier" },
 				c = { "clang-format" },
+				cpp = { "clang-format" },
 				["markdown.mdx"] = { "prettier" },
 			},
 			format_on_save = function(bufnr)

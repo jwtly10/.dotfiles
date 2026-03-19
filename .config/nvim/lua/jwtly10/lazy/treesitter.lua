@@ -16,7 +16,6 @@ return {
 			"vim",
 			"vimdoc",
 			"query",
-			"rust",
 		})
 	end,
 }

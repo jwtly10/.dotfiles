@@ -50,6 +50,8 @@ alias pyenv="source .venv/bin/activate"
 
 alias gs="git status"
 alias gc="git checkout"
+alias gd="git diff"
+alias gds="git diff --staged"
 alias gl='git log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --date=short'
 
 export NVM_DIR="$HOME/.nvm"
@@ -102,3 +104,20 @@ ladybird_aliases() {
 }
 add-zsh-hook chpwd ladybird_aliases
 ladybird_aliases  # Run once on shell start
+
+# JS engine alias
+js_engine_aliases() {
+  if [[ "$PWD" == */js-engine* ]]; then
+    alias js='./build/js_engine'
+  else
+    unalias js 2>/dev/null
+  fi
+}
+add-zsh-hook chpwd js_engine_aliases
+js_engine_aliases 
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH=$PATH:/Users/personal/.local/bin

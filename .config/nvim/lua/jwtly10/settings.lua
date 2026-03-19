@@ -37,8 +37,3 @@ vim.opt.ttimeoutlen = 10
 -- Stop auto commenting new lines
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
 vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
-
--- Themes
--- Vim compat theme - ./colors/onehalfdark.vim
--- vim.cmd("colorscheme onehalfdark")
-vim.o.background = "dark"
