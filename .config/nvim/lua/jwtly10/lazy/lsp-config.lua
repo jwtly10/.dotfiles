@@ -33,7 +33,7 @@ return {
 				"zls",
 				"clangd",
 				"rust_analyzer",
-				"pyright",
+				"basedpyright",
 				"ruff", -- python formatter
 			},
 		})

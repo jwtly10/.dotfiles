@@ -3,16 +3,26 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-font-size = 18
+font-size = 20
 
 # very very dark blue
 # background = #282A2C
 font-family=Berkeley Mono
+background = #000000
 # background = #191919
 macos-titlebar-style=native
 mouse-hide-while-typing = true
 
 keybind = cmd+enter=unbind
+keybind = super+h=goto_split:left
+keybind = super+l=goto_split:right
+keybind = super+j=goto_split:down
+keybind = super+k=goto_split:up
+
+keybind = super+right=resize_split:right,30
+keybind = super+left=resize_split:left,30
+keybind = super+down=resize_split:down,30
+keybind = super+up=resize_split:up,30
 
 #Increase to 100MB
 scrollback-limit=100000000
