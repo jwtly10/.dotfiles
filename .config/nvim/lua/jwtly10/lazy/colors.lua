@@ -4,7 +4,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("onedark").setup({})
-			vim.cmd("colorscheme onedark")
+			-- vim.cmd("colorscheme onedark")
 		end,
 	},
 	{
@@ -21,7 +21,7 @@ return {
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("gruvbox")
+			-- vim.cmd.colorscheme("gruvbox")
 		end,
 	},
 }

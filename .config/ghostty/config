@@ -8,12 +8,14 @@ font-size = 20
 # very very dark blue
 # background = #282A2C
 font-family=Berkeley Mono
+config-file = ?auto/theme.ghostty
 background = #000000
 # background = #191919
 macos-titlebar-style=native
 mouse-hide-while-typing = true
 
 keybind = cmd+enter=unbind
+keybind = ctrl+enter=unbind
 keybind = super+h=goto_split:left
 keybind = super+l=goto_split:right
 keybind = super+j=goto_split:down
