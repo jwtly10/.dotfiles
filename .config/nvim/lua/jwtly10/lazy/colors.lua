@@ -1,5 +1,11 @@
 return {
 	{
+		"rebelot/kanagawa.nvim",
+		config = function()
+			vim.cmd("colorscheme kanagawa-dragon")
+		end,
+	},
+	{
 		"navarasu/onedark.nvim",
 		priority = 1000,
 		config = function()

@@ -53,6 +53,7 @@ alias gc="git checkout"
 alias gd="git diff"
 alias gds="git diff --staged"
 alias gl='git log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --date=short'
+alias gor='gh repo view --web'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
