@@ -38,6 +38,17 @@ return {
 			},
 		})
 
+		vim.api.nvim_create_autocmd("BufRead", {
+			pattern = "*.pine",
+			callback = function()
+				vim.lsp.start({
+					name = "donsumi-lsp",
+					cmd = { "/Users/personal/Projects/codext/target/debug/donsumi-lsp" },
+					root_dir = vim.fs.dirname(vim.fs.find({ ".git" }, { upward = true })[1]),
+				})
+			end,
+		})
+
 		vim.lsp.config["lua_ls"] = {
 			capabilities = capabilities,
 			settings = {

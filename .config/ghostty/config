@@ -3,15 +3,18 @@ auto-update = download
 window-inherit-working-directory = true
 
 # ui
-font-size = 20
+font-size = 18
 
 # very very dark blue
-# background = #282A2C
+background = #282a2c
+# font-family=FiraCode Nerd Font
 font-family=Berkeley Mono
-config-file = ?auto/theme.ghostty
-background = #000000
+# config-file = ?auto/theme.ghostty
+ # window-padding-x = 30
+# theme = Atom One Dark
+# background = #000000
 # background = #191919
-macos-titlebar-style=native
+# macos-titlebar-style = native
 mouse-hide-while-typing = true
 
 keybind = cmd+enter=unbind
