@@ -6,15 +6,14 @@ window-inherit-working-directory = true
 font-size = 18
 
 # very very dark blue
-background = #282a2c
+# background = #282a2c
 # font-family=FiraCode Nerd Font
-font-family=Berkeley Mono
+# font-family=Berkeley Mono
 # config-file = ?auto/theme.ghostty
  # window-padding-x = 30
 # theme = Atom One Dark
 # background = #000000
 # background = #191919
-# macos-titlebar-style = native
 mouse-hide-while-typing = true
 
 keybind = cmd+enter=unbind

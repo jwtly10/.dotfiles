@@ -18,7 +18,7 @@ export TERM=xterm-256color
 export ZSH="$HOME/.oh-my-zsh"
 
 # alias vim="nvim"
-alias nvim="vim"
+#alias nvim="vim"
 setopt IGNORE_EOF
 
 plugins=(git)
