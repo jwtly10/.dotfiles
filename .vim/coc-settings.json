@@ -1,6 +1,10 @@
 {
-  "diagnostic.enableMessage": "jump",
+  "diagnostic.enableMessage": "never",
   "diagnostic.virtualText": false,
   "diagnostic.checkCurrentLine": false,
-  "inlayHint.enable": false
+  "inlayHint.enable": false,
+  "coc.preferences.messageLevel": "error",
+  "notification.disabledProgressSources": [
+    "*"
+  ]
 }

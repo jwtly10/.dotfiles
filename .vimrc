@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'github/copilot.vim'
 call plug#end()
 
 "
@@ -70,10 +71,7 @@ nmap gy <Plug>(coc-type-definition)
 nnoremap gt <Plug>(coc-diagnostic-info)
 
 nnoremap K :call CocActionAsync('doHover')<CR>
-nnoremap <leader>K :call coc#float#jump()<CR>
 
-nnoremap gt <Plug>(coc-diagnostic-info)
-nnoremap gt :call coc#float#jump()<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ca <Plug>(coc-codeaction-cursor)
 nmap <leader>f <Plug>(coc-format-selected)
@@ -89,21 +87,15 @@ hi CocUnusedHighlight guifg=NONE guibg=NONE gui=strikethrough guisp=Gray cterm=u
 hi CocDeprecatedHighlight guifg=NONE guibg=NONE gui=strikethrough guisp=Gray cterm=underline
 
 " Completions
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
+inoremap <expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
 inoremap <silent><expr> <CR>
-      \ coc#pum#visible() ? coc#pum#confirm() :
-      \ "\<CR>"
+      \ coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+
+" Copilot
+let g:copilot_no_tab_map = v:true
+imap <silent><script><expr> <Tab> copilot#Accept("\<CR>")
 
 "
 " Settings
@@ -120,6 +112,11 @@ set wildmenu
 set showcmd
 set incsearch
 set hlsearch
+
+" defaults to no case, but will require case if used
+set ignorecase
+set smartcase
+
 set backspace=indent,eol,start
 set autoindent
 set nostartofline
@@ -185,3 +182,4 @@ nnoremap <C-l> <C-w>l
 map j gj
 map k gk
 
+set t_Co=16
