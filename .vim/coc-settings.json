@@ -1,0 +1,6 @@
+{
+  "diagnostic.enableMessage": "jump",
+  "diagnostic.virtualText": false,
+  "diagnostic.checkCurrentLine": false,
+  "inlayHint.enable": false
+}
