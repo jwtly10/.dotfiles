@@ -9,21 +9,15 @@ vim.opt.tabstop = 4
 vim.opt.wrap = false
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
--- vim.opt.expandtab = tru
--- vim.opt.smartindent = true
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
-vim.opt.termguicolors = true
+vim.opt.termguicolors = false
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "no"
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
--- vim.opt.colorcolumn = "80"
--- vim.opt.colorcolumn = "120"
 vim.opt.cursorline = false
 vim.opt.swapfile = false
--- vim.opt.fixendofline = false
--- vim.opt.endofline = false
 
 -- Addressing some perf issues
 vim.opt.lazyredraw = true
@@ -35,7 +29,9 @@ vim.opt.timeoutlen = 1000
 vim.opt.ttimeoutlen = 10
 
 -- Stop auto commenting new lines
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
-vim.cmd("autocmd BufEnter * setlocal formatoptions-=cro")
-vim.cmd("colorscheme vim")
--- vim.cmd("colorscheme onehalfdark")
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "*",
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
+})
