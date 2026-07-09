@@ -1,6 +1,6 @@
 {
-  "diagnostic.enableMessage": "never",
-  "diagnostic.virtualText": false,
+  "diagnostic.enableMessage": "jump",
+  "diagnostic.virtualText": true,
   "diagnostic.checkCurrentLine": false,
   "inlayHint.enable": false,
   "coc.preferences.messageLevel": "error",

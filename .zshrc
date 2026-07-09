@@ -10,6 +10,7 @@ export M2_HOME='/opt/apache-maven-3.9.6'
 export PATH="$M2_HOME/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH="/usr/local/bin/python3.12:$PATH"
+export PATH=$PATH:/opt/homebrew/opt/qt
 export VISUAL=vim
 export EDITOR=vim
 # export SSL_CERT_FILE=$(python3 -m certifi)
@@ -26,13 +27,15 @@ plugins=(git)
 ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
 
+alias zig17="$HOME/Downloads/zig-aarch64-macos-0.17.0-dev.1282+c0f9b51d8/zig"
+alias zig="zig17"
+
 alias home="cd ~"
 alias proj="cd ~/Projects"
 alias dotfiles="cd ~/.dotfiles"
 alias dfg="git -C ~/.dotfiles"
 
 alias nvimconfig="cd ~/.dotfiles/.config/nvim; nvim ."
-# alias nvimconfig="cd ~/.config/nvim; nvim ."
 alias vimconfig="cd ~/; vim .vimrc"
 
 alias v="nvim ."
