@@ -51,8 +51,6 @@ vim.api.nvim_set_keymap("n", "<leader>ge", "oif err != nil {<CR>}<Esc>O", { nore
 -- Clear nohl
 vim.keymap.set("n", "<leader>\\", ":nohl<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>pn", vim.cmd.Ex)
-
 -- Vim Tabs
 vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-c>", ":tabclose<CR>", { noremap = true, silent = true })

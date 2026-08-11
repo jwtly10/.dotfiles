@@ -8,12 +8,6 @@
       "g i": "editor::GoToImplementation",
       "K": "editor::Hover",
       "space x x": "diagnostics::Deploy",
-      // "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      // "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      // "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      // "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
-      // "ctrl-u": ["workspace::SendKeystrokes", "9 k"],
-      // "ctrl-d": ["workspace::SendKeystrokes", "9 j"],
       "g c c": "editor::ToggleComments",
       "space c a": "editor::ToggleCodeActions",
       "space o": "tab_switcher::Toggle",
@@ -89,37 +83,61 @@
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-2": null
-    }
+      "cmd-2": null,
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-3": null
-    }
+      "cmd-3": null,
+    },
   },
   {
     "context": "Workspace",
     "bindings": {
-      "cmd-4": null
-    }
+      "cmd-4": null,
+    },
   },
   {
     "context": "Pane",
     "bindings": {
-      "cmd-1": [
-        "pane::ActivateItem",
-        0
-      ]
-    }
+      "cmd-1": ["pane::ActivateItem", 0],
+    },
   },
   {
     "context": "Pane",
     "bindings": {
-      "cmd-2": [
-        "pane::ActivateItem",
-        1
-      ]
+      "cmd-2": ["pane::ActivateItem", 1],
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-3": ["pane::ActivateItem", 2],
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-5": ["pane::ActivateItem", 4],
+    },
+  },
+  {
+    "context": "Pane",
+    "bindings": {
+      "cmd-4": ["pane::ActivateItem", 3],
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w t": "terminal_panel::ToggleFocus",
+    },
+  },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-k": "editor::KillRingCut"
     }
-  }
+  },
 ]

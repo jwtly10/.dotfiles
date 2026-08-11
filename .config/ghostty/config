@@ -2,23 +2,11 @@ auto-update-channel = tip
 auto-update = download
 window-inherit-working-directory = true
 
-# ui
-font-size = 17
-
-# Dark blue
-# background = #282a2c
-# font-family=FiraCode Nerd Font
-# font-family=Berkeley Mono
-# config-file = ?auto/theme.ghostty
-# window-padding-x = 30
-# window-padding-x = 5
-# window-padding-y = 5
-# macos-titlebar-style = native
-# Black
-# background = #000000
-# Off black
-# background = #191919
+font-size = 21
+macos-titlebar-style = native
 mouse-hide-while-typing = true
+
+macos-titlebar-style=tabs
 
 keybind = cmd+enter=unbind
 keybind = ctrl+enter=unbind
@@ -27,10 +15,10 @@ keybind = super+l=goto_split:right
 keybind = super+j=goto_split:down
 keybind = super+k=goto_split:up
 
-keybind = super+right=resize_split:right,30
-keybind = super+left=resize_split:left,30
-keybind = super+down=resize_split:down,30
-keybind = super+up=resize_split:up,30
+keybind = super+shift+l=resize_split:right,30
+keybind = super+shift+h=resize_split:left,30
+keybind = super+shift+j=resize_split:down,30
+keybind = super+shift+k=resize_split:up,31
 
-#Increase to 100MB
+#Increased to 100MB
 scrollback-limit=100000000

@@ -4,3 +4,4 @@ ignore:
   - '*.log'
   - pkg.md
   - '**/karabiner/automatic_backups/**'
+  - '*.swap'

@@ -16,6 +16,7 @@ return {
 			"vim",
 			"vimdoc",
 			"query",
+			"odin",
 		})
 	end,
 }

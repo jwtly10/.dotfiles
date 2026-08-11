@@ -11,6 +11,10 @@ export PATH="$M2_HOME/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH="/usr/local/bin/python3.12:$PATH"
 export PATH=$PATH:/opt/homebrew/opt/qt
+export PATH="$HOME/tools/zig/current:$PATH"
+export PATH="$HOME/tools/odin/current:$PATH"
+export PATH="$HOME/tools/ols/current:$PATH"
+export PATH="$HOME/tools/rust:$PATH"
 export VISUAL=vim
 export EDITOR=vim
 # export SSL_CERT_FILE=$(python3 -m certifi)
@@ -24,11 +28,9 @@ setopt IGNORE_EOF
 
 plugins=(git)
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="afowler"
+# ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
-
-alias zig17="$HOME/Downloads/zig-aarch64-macos-0.17.0-dev.1282+c0f9b51d8/zig"
-alias zig="zig17"
 
 alias home="cd ~"
 alias proj="cd ~/Projects"
@@ -43,6 +45,7 @@ alias c="code ."
 
 alias tmuxconfig="~;nvim .tmux.conf"
 alias ghostconfig="~;nvim .config/ghostty/config"
+alias alacconfig="~;nvim /Users/personal/.config/alacritty/alacritty.toml"
 alias gbind="ghostty +list-keybinds --default"
 alias tmuxsource="tmux source-file ~/.tmux.conf"
 
@@ -119,6 +122,9 @@ js_engine_aliases() {
 }
 add-zsh-hook chpwd js_engine_aliases
 js_engine_aliases 
+
+# odiff local binary
+export PATH="/Users/personal/Projects/odiff/bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

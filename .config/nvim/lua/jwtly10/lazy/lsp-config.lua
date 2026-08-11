@@ -14,11 +14,11 @@ return {
 	config = function()
 		local cmp = require("cmp")
 
-		local capabilities = require("cmp_nvim_lsp").default_capabilities(
-			vim.lsp.protocol.make_client_capabilities()
-		)
+		local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 		require("mason").setup()
+
+		-- vim.lsp.inlay_hint.enable(true)
 
 		local servers = {
 			lua_ls = {
@@ -58,8 +58,16 @@ return {
 				},
 			},
 
+			ols = {},
 			ts_ls = {},
-			zls = {},
+			-- ZLS
+			-- zls = {},
+			-- Custom LSP https://github.com/llogick/zigscient
+			zls = {
+				cmd = { "/Users/personal/Projects/zig-libs/zigscient/zig-out/bin/zigscient" },
+				filetypes = { "zig", "zir" },
+				root_dir = vim.fs.root(0, { "build.zig", ".git" }),
+			},
 			html = {},
 
 			clangd = {

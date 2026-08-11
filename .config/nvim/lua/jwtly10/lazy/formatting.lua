@@ -4,6 +4,12 @@ return {
 	config = function()
 		require("conform").setup({
 			formatters = {
+				odinfmt = {
+					-- Change where to find the command if it isn't in your path.
+					command = "odinfmt",
+					args = { "-stdin" },
+					stdin = true,
+				},
 				prettier = {
 					prepend_args = function()
 						return {
@@ -38,6 +44,8 @@ return {
 				markdown = { "prettier" },
 				c = { "clang-format" },
 				cpp = { "clang-format" },
+				zig = { "zigfmt" },
+				odin = { "odinfmt" },
 				["markdown.mdx"] = { "prettier" },
 			},
 			format_on_save = function(bufnr)
@@ -49,6 +57,9 @@ return {
 		})
 
 		vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+		-- Default to disabled
+		vim.g.disable_autoformat = true
 
 		vim.api.nvim_create_user_command("FormatDisable", function(args)
 			if args.bang then
@@ -67,6 +78,15 @@ return {
 			vim.g.disable_autoformat = false
 		end, {
 			desc = "Re-enable autoformat-on-save",
+		})
+
+		vim.api.nvim_create_user_command("Format", function()
+			require("conform").format({
+				async = true,
+				lsp_format = "fallback",
+			})
+		end, {
+			desc = "Format current file",
 		})
 	end,
 }
